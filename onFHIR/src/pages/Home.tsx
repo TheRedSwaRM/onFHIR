@@ -1,6 +1,7 @@
 import { useFhirRead } from "@bonfhir/query/r4b";
 import { FhirQueryLoader, FhirValue } from "@bonfhir/react/r4b";
 import { Group, Paper, Stack, Text } from "@mantine/core";
+import PatientReportsTable from "../components/PatientReportsTable";
 
 export default function Home() {
   const patientQuery = useFhirRead(
@@ -37,6 +38,7 @@ export default function Home() {
           )}
         </FhirQueryLoader>
       </Paper>
+      {/* <PatientReportsTable patientID={patientQuery.id} /> */}
     </Paper>
   );
 }
