@@ -2,6 +2,7 @@ import { useFhirRead } from "@bonfhir/query/r4b";
 import { FhirQueryLoader, FhirValue } from "@bonfhir/react/r4b";
 import { Group, Paper, Stack, Text } from "@mantine/core";
 import PatientReportsTable from "../components/PatientReportsTable";
+import PatientList from "../components/PatientList";
 
 export default function Home() {
   const patientQuery = useFhirRead(
@@ -11,7 +12,11 @@ export default function Home() {
   
   return (
     <Paper p="xl"> {/*Mantine Component, to learn more, read Mantine documentation*/}
-      <Paper shadow="sm" p="xl">
+    {/* <p>Hello, World! Part 2!!</p> */}
+    <h1>List of Patients</h1>
+    <PatientList />  
+      
+      {/* <Paper shadow="sm" p="xl">
         <FhirQueryLoader query={patientQuery}>
           {(patient) => (
             <Stack gap="xs">
@@ -38,7 +43,7 @@ export default function Home() {
           )}
         </FhirQueryLoader>
       </Paper>
-      {/* <PatientReportsTable patientID={patientQuery.id} /> */}
+      <PatientReportsTable patientId={patientQuery.id} /> */}
     </Paper>
   );
 }
